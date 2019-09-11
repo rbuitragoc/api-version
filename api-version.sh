@@ -1,6 +1,6 @@
 #!/bin/sh
-# Rick Buitrago <rbuitragoc@gmail.com>
-# 
+# author: Rick Buitrago <rbuitragoc@gmail.com>
+# https://github.com/rbuitragoc/api-version
 
 ACTUATOR_INFO_URL=$1
 # echo "ACTUATOR_INFO_URL set to $ACTUATOR_INFO_URL"
