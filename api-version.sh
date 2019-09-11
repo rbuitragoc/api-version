@@ -15,6 +15,8 @@ check_all() {
         echo "Actuator at URL $ACTUATOR_INFO_URL is not currently available."; 
         exit 1; 
     fi
+    # checking that actuator actually contains git data
+    if ! `curl -s -X GET $ACTUATOR_INFO_URL | jq 'has("git")'` ; then { echo "Actuator does not expose git metadata. Please configure so that it does, and try again."; exit 1; } fi
 }
 
 retrieve_git_details() {
