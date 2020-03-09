@@ -8,7 +8,7 @@ ACTUATOR_INFO_URL=$1
 check_all() {
     # commands availability: curl, jq
     command -v curl >/dev/null && continue || { echo "curl command not found. Please install first."; exit 1; }
-    command -v jq >/dev/null && continue || { echo "jq command not found. Please install first (https://stedolan.github.io/jq/)"; exit 1; }
+    command -v jq >/dev/null && continue || { echo "jq command not found. Please install first (https://stedolan.github.io/jq/) and try again"; exit 1; }
     
     # checking server is up and has spring boot actuator working
     if [ "`curl -s -I -L $ACTUATOR_INFO_URL | head -n 1 | cut -d$' ' -f2`" != "200" ]; then 
